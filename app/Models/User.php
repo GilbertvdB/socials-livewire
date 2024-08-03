@@ -46,13 +46,33 @@ class User extends Authenticatable
         ];
     }
 
+    /**
+     * Get the user's comments.
+     *
+     * @return HasMany<Comment>
+     */
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
     }
 
+    /**
+     * Get the user's posts.
+     *
+     * @return HasMany<Post>
+     */
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class);
+    }
+
+    /**
+     * Get the user's likes.
+     *
+     * @return HasMany<Post>
+     */
+    public function likes(): HasMany
+    {
+        return $this->hasMany(Like::class);
     }
 }
